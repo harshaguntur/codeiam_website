@@ -1,6 +1,6 @@
 // import { Timeline } from '@/components/ui/timeline'
-import React from 'react'
 import { Timelines } from '../comp/Timeline'
+import React from 'react'
 import { StickyScrollReveal } from '../comp/Stickyscroll'
 import AboutUs from '../comp/AboutUs'
 

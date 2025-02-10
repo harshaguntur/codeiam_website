@@ -92,7 +92,7 @@ export default function Chapterpagese({
 
       <Card className="mb-8">
         <CardHeader>
-          <CardTitle>Join Our WhatsApp Group</CardTitle>
+          <CardTitle>Join Our Community</CardTitle>
         </CardHeader>
         <CardContent>
           <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">

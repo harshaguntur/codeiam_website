@@ -10,6 +10,7 @@ import { JoinTeam } from './comp/Jointeam'
 import { OurPartners } from './comp/OurPartner'
 import { Chap,  } from './comp/AppleCaraosel'
 import Ourmission from './comp/Ourmission'
+import Statistics from './comp/Statistics'
 // import { CarouselPlugin } from './comp/Carousal'
 // import AboutUs from './comp/AboutUs'
 // import ChapterComp from './comp/ChapterComp'
@@ -30,6 +31,8 @@ const page = () => {
       </div> */}
       <div id='home'>
       <Hero/>
+      <Statistics/>
+      
       {/* <Timelines/> */}
       <Ourmission/>
       </div>

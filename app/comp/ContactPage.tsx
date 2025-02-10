@@ -5,83 +5,75 @@ import { Mail, MapPin, Phone } from "lucide-react"
 
 export default function ContactPage() {
   return (
-    <div className="container px-4 md:px-6 py-12 mt-24">
-      <div className="grid md:grid-cols-2 gap-6 items-stretch">
-        <div className="relative bg-blue-500 text-white p-6 md:p-8 rounded-lg overflow-hidden">
+    <div className="container px-4 md:px-6 py-16 mt-24 flex flex-col items-center">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">Let's Build Something Great Together!</h1>
+        <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+          Whether you have an idea, need support, or want to collaborate, we're here to help.
+        </p>
+      </div>
+      
+      <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl">
+        <div className="relative bg-gradient-to-r from-blue-500 to-blue-700 text-white p-8 rounded-lg shadow-lg">
           <div className="relative z-10">
-            <h1 className="text-2xl md:text-3xl font-bold mb-4">Get in Touch with Us</h1>
-            <p className="text-blue-50 mb-8 max-w-md">
-              Have questions, feedback, or ideas? We&apos;d love to hear from you! Whether you&apos;re looking for more
-              information about our chapters, events, or how to get involved, our team is here to assist.
+            <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
+            <p className="text-blue-100 mb-6 max-w-md text-lg">
+              Have a question? Want to work with us? Let's talk!
             </p>
-            <div className="space-y-4">
+            <div className="space-y-4 text-lg">
               <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-blue-50" />
+                <Phone className="h-6 w-6 text-blue-100" />
                 <span>+91 9693596408</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-blue-50" />
+                <Mail className="h-6 w-6 text-blue-100" />
                 <span>codeiam@gmail.com</span>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-blue-50" />
+                <MapPin className="h-6 w-6 text-blue-100" />
                 <span>DIGIFAC First Floor</span>
               </div>
             </div>
           </div>
-          {/* Background decorative pattern */}
-          <div className="absolute inset-0 z-0 opacity-10">
-            <div className="absolute right-0 bottom-0 w-64 h-64 bg-white rounded-full transform translate-x-1/3 translate-y-1/3" />
-            <div className="absolute left-0 top-0 w-64 h-64 bg-white rounded-full transform -translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute inset-0 z-0 opacity-20">
+            <div className="absolute right-0 bottom-0 w-48 h-48 bg-white rounded-full transform translate-x-1/3 translate-y-1/3" />
+            <div className="absolute left-0 top-0 w-48 h-48 bg-white rounded-full transform -translate-x-1/3 -translate-y-1/3" />
           </div>
         </div>
-        <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg">
-          <div className="mb-8">
-            <h2 className="text-xl font-semibold mb-2">Connect With CodeIAM</h2>
-            <p className="text-gray-600">We&apos;re Here For You!</p>
-          </div>
+        
+        <div className="bg-white p-8 rounded-lg shadow-xl">
           <form className="space-y-6">
             <div className="grid gap-4 md:grid-cols-2">
-              <div className="space-y-2">
-                <Input
-                  id="name"
-                  placeholder="NAME"
-                  className="border-0 border-b border-gray-300 rounded-none px-0 focus-visible:ring-0 focus-visible:border-black"
-                />
-              </div>
-              <div className="space-y-2">
-                <Input
-                  id="email"
-                  placeholder="EMAIL"
-                  type="email"
-                  className="border-0 border-b border-gray-300 rounded-none px-0 focus-visible:ring-0 focus-visible:border-black"
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
               <Input
-                id="phone"
-                placeholder="PHONE NUMBER"
-                type="tel"
-                className="border-0 border-b border-gray-300 rounded-none px-0 focus-visible:ring-0 focus-visible:border-black"
+                id="name"
+                placeholder="Your Name"
+                className="border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-500 text-lg"
+              />
+              <Input
+                id="email"
+                placeholder="Your Email"
+                type="email"
+                className="border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-500 text-lg"
               />
             </div>
-            <div className="space-y-2">
-              <Textarea
-                id="message"
-                placeholder="MESSAGE"
-                className="min-h-[100px] border-0 border-b border-gray-300 rounded-none px-0 focus-visible:ring-0 focus-visible:border-black"
-              />
-            </div>
-            <Button className="w-full md:w-auto bg-blue-500 hover:bg-blue-600 text-white px-8 py-2 rounded-full">
-              Get in Touch with CodeIAM!
+            <Input
+              id="phone"
+              placeholder="Your Phone Number"
+              type="tel"
+              className="border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-500 text-lg"
+            />
+            <Textarea
+              id="message"
+              placeholder="Tell us what’s on your mind..."
+              className="min-h-[120px] border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-500 text-lg"
+            />
+            <Button className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md text-lg font-semibold shadow-md">
+              Send Message
             </Button>
           </form>
         </div>
       </div>
-      <div className="mt-20">
-
-      </div>
     </div>
   )
 }
+

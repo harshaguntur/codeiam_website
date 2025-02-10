@@ -7,6 +7,7 @@ const page = () => {
     <div className='mt-20'>
     <ResponsiveEventsList/>
     <PresentationSlider/>
+   
   </div>
   )
 }
