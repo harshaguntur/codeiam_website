@@ -1,17 +1,37 @@
 "use client";
 import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { VolumeX, Volume2 } from "lucide-react"; // Icons for mute/unmute
 
 export function Hero() {
-  const videoSrc = "/STUDENT_IDEATHON_STARTUP-EXPO_2025.mp4"; // Video in public folder
-  const [isMuted, setIsMuted] = useState(false); // Video starts unmuted
+  const videoSrc = "/STUDENT_IDEATHON_STARTUP-EXPO_2025.mp4"; // Ensure file is in the public folder
+  const [isMuted, setIsMuted] = useState(true); // Start muted to allow autoplay
   const [isClient, setIsClient] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     setIsClient(true);
+
+    const playVideo = () => {
+      if (videoRef.current) {
+        videoRef.current.muted = true; // Start muted for autoplay compliance
+        videoRef.current
+          .play()
+          .then(() => {
+            setTimeout(() => {
+              videoRef.current!.muted = false; // Unmute after it starts playing
+              setIsMuted(false);
+            }, 500); // Delay unmute slightly
+          })
+          .catch((error) => {
+            console.warn("Autoplay failed, user interaction needed:", error);
+          });
+      }
+    };
+
+    playVideo();
   }, []);
 
   return (
@@ -19,12 +39,13 @@ export function Hero() {
       {/* Background Video */}
       {isClient && (
         <video
+          ref={videoRef}
           className="absolute top-0 left-0 w-full h-full object-cover"
           src={videoSrc}
           autoPlay
           loop
-          muted={isMuted}
           playsInline
+          muted // Start muted (autoplay requirement)
         />
       )}
 
@@ -32,7 +53,12 @@ export function Hero() {
       {isClient && (
         <button
           className="absolute bottom-6 right-6 bg-black/40 p-2 rounded-full text-white hover:bg-black/70 transition"
-          onClick={() => setIsMuted(!isMuted)}
+          onClick={() => {
+            if (videoRef.current) {
+              videoRef.current.muted = !isMuted;
+            }
+            setIsMuted(!isMuted);
+          }}
         >
           {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
         </button>
@@ -67,3 +93,4 @@ export function Hero() {
     </div>
   );
 }
+
