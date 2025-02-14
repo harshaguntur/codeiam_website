@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/autoplay";
 import { Navigation, Autoplay } from "swiper/modules";
 
 const images = [
@@ -14,11 +13,11 @@ const images = [
 
 const StudentStartupExpo = () => {
   return (
-    <section className="px-6 py-12 mx-auto max-w-7xl mt-12 bg-white  ">
+    <section className="px-6 py-12 mx-auto max-w-7xl mt-12 bg-white">
       {/* Image Slider */}
       <div className="mb-8 flex justify-center">
         <Swiper
-          navigation={true}
+          navigation
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           modules={[Navigation, Autoplay]}
           className="w-full max-w-md sm:max-w-lg md:max-w-2xl rounded-lg shadow-lg overflow-hidden"
@@ -32,7 +31,7 @@ const StudentStartupExpo = () => {
                   width={600}
                   height={350}
                   className="w-full h-auto object-cover rounded-lg shadow-md"
-                  priority
+                  priority={index === 0} // Prioritize the first image
                 />
               </div>
             </SwiperSlide>
@@ -42,9 +41,7 @@ const StudentStartupExpo = () => {
 
       {/* Event Description */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-extrabold text-gray-900">
-           Student Startup Expo 2025
-        </h2>
+        <h2 className="text-4xl font-extrabold text-gray-900">Student Startup Expo 2025</h2>
         <p className="mt-4 text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
           The <span className="font-semibold text-blue-600">Student Startup Expo 2025</span> is an exclusive platform designed to ignite innovation and entrepreneurship among students.
           <br /> Showcase your startup, pitch ideas, and connect with investors at one of the biggest startup events of the year.
@@ -84,14 +81,12 @@ const StudentStartupExpo = () => {
 
       {/* Verification Documents */}
       <div className="text-center bg-gray-100 py-8 rounded-lg shadow-md mt-12">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-           Event Verification Documents
-        </h3>
+        <h3 className="text-2xl font-semibold text-gray-800 mb-6">Event Verification Documents</h3>
         <div className="flex flex-col sm:flex-row justify-center gap-6 flex-wrap">
           {["verification1.pdf", "verification2.pdf", "verification3.pdf"].map((doc, idx) => (
             <a
               key={idx}
-              href={`/documents/${doc}`}
+              href={`/documents/${doc}`} // Ensure these exist in the `public/documents` folder
               className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md font-medium hover:bg-blue-700 transition duration-300"
             >
               🔹 Permission Letter {idx + 1}
@@ -104,4 +99,3 @@ const StudentStartupExpo = () => {
 };
 
 export default StudentStartupExpo;
-      
