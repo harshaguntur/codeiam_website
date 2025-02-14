@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -10,7 +9,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 
 const images = [
   { src: "/Student_EXPO.png", alt: "Student Startup Expo 1" },
-  { src: "/Student_EXPO_2.png", alt: "Student Startup Expo 2" },
+  { src: "/Student_EXPO_(7).png", alt: "Student Startup Expo 2" },
 ];
 
 const StudentStartupExpo = () => {
@@ -105,3 +104,4 @@ const StudentStartupExpo = () => {
 };
 
 export default StudentStartupExpo;
+      
