@@ -68,15 +68,27 @@ const StudentStartupExpo = () => {
       {/* Event Details */}
       <div className="mt-12 p-8 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow-lg text-center">
         <h3 className="text-2xl font-bold">📅 Event Details</h3>
-        <p className="mt-4 text-lg">📍 <strong>Venue:</strong> Innovation Hub, [Your University Name]</p>
-        <p className="text-lg">📆 <strong>Date:</strong> February 2025 (Exact date to be announced)</p>
+        <p className="mt-4 text-lg">📍 <strong>Venue:</strong>  South Campus Placement Building, Andhra University</p>
+        <p className="text-lg">📆 <strong>Date:</strong> 01-03-2025</p>
         <p className="text-lg">🎟️ <strong>Registration:</strong> Open to all students with a startup idea.</p>
-        <a
+        {/* <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSd4qXFRNdB6h1tgEWKRCisIXbnvJARJtSTEhh3XXh4Q1JRrGQ/viewform?usp=header"
           className="mt-6 inline-block px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-200 transition duration-300"
         >
           Register Now
-        </a>
+        </a> */}
+       <iframe
+  src="https://docs.google.com/forms/d/e/1FAIpQLSd4qXFRNdB6h1tgEWKRCisIXbnvJARJtSTEhh3XXh4Q1JRrGQ/viewform?embedded=true"
+  style={{ width: "100%" }}
+  height="750"
+  frameBorder="0"
+  marginHeight="0"
+  marginWidth="0"
+  className="w-full"
+>
+  Loading…
+</iframe>
+
       </div>
 
       {/* Verification Documents */}
