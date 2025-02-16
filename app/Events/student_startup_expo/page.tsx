@@ -32,6 +32,7 @@ const StudentStartupExpo = () => {
                   height={350}
                   className="w-full h-auto object-cover rounded-lg shadow-md"
                   priority={index === 0} // Prioritize the first image
+                  unoptimized
                 />
               </div>
             </SwiperSlide>
@@ -68,27 +69,19 @@ const StudentStartupExpo = () => {
       {/* Event Details */}
       <div className="mt-12 p-8 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow-lg text-center">
         <h3 className="text-2xl font-bold">📅 Event Details</h3>
-        <p className="mt-4 text-lg">📍 <strong>Venue:</strong>  South Campus Placement Building, Andhra University</p>
+        <p className="mt-4 text-lg">📍 <strong>Venue:</strong> South Campus Placement Building, Andhra University</p>
         <p className="text-lg">📆 <strong>Date:</strong> 01-03-2025</p>
-        <p className="text-lg">🎟️ <strong>Registration:</strong> Open to all students with a startup idea.</p>
-        {/* <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSd4qXFRNdB6h1tgEWKRCisIXbnvJARJtSTEhh3XXh4Q1JRrGQ/viewform?usp=header"
-          className="mt-6 inline-block px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-200 transition duration-300"
-        >
-          Register Now
-        </a> */}
-       <iframe
-  src="https://docs.google.com/forms/d/e/1FAIpQLSd4qXFRNdB6h1tgEWKRCisIXbnvJARJtSTEhh3XXh4Q1JRrGQ/viewform?embedded=true"
-  style={{ width: "100%" }}
-  height="750"
-  frameBorder="0"
-  marginHeight="0"
-  marginWidth="0"
-  className="w-full"
->
-  Loading…
-</iframe>
+        <p className="text-lg">🎟️ <strong>Registration:</strong> Open to all students with a startup idea. Sign-In with google to access the Form</p>
 
+        
+        {/* Embedded Google Form */}
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSd4qXFRNdB6h1tgEWKRCisIXbnvJARJtSTEhh3XXh4Q1JRrGQ/viewform?embedded=true"
+          className="w-full h-[750px] mt-6 rounded-lg"
+          frameBorder="0"
+        >
+          Loading…
+        </iframe>
       </div>
 
       {/* Verification Documents */}
@@ -98,7 +91,7 @@ const StudentStartupExpo = () => {
           {["verification1.pdf", "verification2.pdf", "verification3.pdf"].map((doc, idx) => (
             <a
               key={idx}
-              href={`/documents/${doc}`} // Ensure these exist in the `public/documents` folder
+              href={`documents/${doc}`} // Adjusted path for Vercel compatibility
               className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md font-medium hover:bg-blue-700 transition duration-300"
             >
               🔹 Permission Letter {idx + 1}
@@ -111,3 +104,4 @@ const StudentStartupExpo = () => {
 };
 
 export default StudentStartupExpo;
+
