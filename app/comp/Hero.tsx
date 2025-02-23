@@ -19,22 +19,27 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
-    if (!isMobile && videoRef.current) {
-      const playVideo = async () => {
-        try {
-          videoRef.current.muted = true;
-          await videoRef.current.play();
-          setTimeout(() => {
-            videoRef.current.muted = false;
-            setIsMuted(false);
-          }, 500);
-        } catch (error) {
-          console.warn("Autoplay failed, user interaction needed:", error);
-        }
-      };
-      playVideo();
-    }
-  }, [isMobile]);
+  if (!isMobile && videoRef.current) {
+    const playVideo = async () => {
+      if (!videoRef.current) return; // Ensure videoRef.current is not null
+
+      try {
+        videoRef.current.muted = true;
+        await videoRef.current.play();
+        setTimeout(() => {
+          if (!videoRef.current) return; // Check again before accessing
+          videoRef.current.muted = false;
+          setIsMuted(false);
+        }, 500);
+      } catch (error) {
+        console.warn("Autoplay failed, user interaction needed:", error);
+      }
+    };
+    
+    playVideo();
+  }
+}, [isMobile]);
+
 
   return (
     <div className="relative w-full h-screen flex flex-col items-center justify-end bg-black text-white">
