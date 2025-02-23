@@ -31,7 +31,7 @@ const StudentStartupExpo = () => {
                   width={600}
                   height={350}
                   className="w-full h-auto object-cover rounded-lg shadow-md"
-                  priority={index === 0} // Prioritize the first image
+                  priority={index === 0}
                   unoptimized
                 />
               </div>
@@ -71,8 +71,7 @@ const StudentStartupExpo = () => {
         <h3 className="text-2xl font-bold">📅 Event Details</h3>
         <p className="mt-4 text-lg">📍 <strong>Venue:</strong> South Campus Placement Building, Andhra University</p>
         <p className="text-lg">📆 <strong>Date:</strong> 01-03-2025</p>
-        <p className="text-lg">🎟️ <strong>Registration:</strong> Open to all students with a startup idea. Sign-In with google to access the Form</p>
-
+        <p className="text-lg">🎟️ <strong>Registration:</strong> Open to all students with a startup idea. Sign-In with Google to access the form.</p>
         
         {/* Embedded Google Form */}
         <iframe
@@ -88,13 +87,19 @@ const StudentStartupExpo = () => {
       <div className="text-center bg-gray-100 py-8 rounded-lg shadow-md mt-12">
         <h3 className="text-2xl font-semibold text-gray-800 mb-6">Event Verification Documents</h3>
         <div className="flex flex-col sm:flex-row justify-center gap-6 flex-wrap">
-          {["verification1.pdf", "verification2.pdf", "verification3.pdf"].map((doc, idx) => (
+          {[
+            { title: "Permission Letter 1", link: "https://drive.google.com/file/d/1DFOS3Ws1iBao9cP-ga1pAW0yF6ffUdIM/view?usp=drive_link" },
+            { title: "Permission Letter 2", link: "https://drive.google.com/file/d/18xlhC45UomaYi1wWVD2GG-MGqQC3kWAz/view?usp=drive_link" },
+            { title: "Permission Letter 3", link: "https://drive.google.com/file/d/1C8q5-NuwF7RYYl_6hye8IOphqkiCFF-R/view?usp=drive_link" },
+          ].map((doc, idx) => (
             <a
               key={idx}
-              href={`documents/${doc}`} // Adjusted path for Vercel compatibility
+              href={doc.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md font-medium hover:bg-blue-700 transition duration-300"
             >
-              🔹 Permission Letter {idx + 1}
+              🔹 {doc.title}
             </a>
           ))}
         </div>
