@@ -11,7 +11,8 @@ export function Hero() {
   const [isMuted, setIsMuted] = useState(true);
   const [isClient, setIsClient] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const videoRef = useRef(null);
+ const videoRef = useRef<HTMLVideoElement | null>(null);
+
 
   useEffect(() => {
     setIsClient(true);
@@ -21,14 +22,15 @@ export function Hero() {
   useEffect(() => {
   if (!isMobile && videoRef.current) {
     const playVideo = async () => {
-      if (!videoRef.current) return; // Ensure videoRef.current is not null
+      const video = videoRef.current;
+      if (!video) return; // Ensure video is available
 
       try {
-        videoRef.current.muted = true;
-        await videoRef.current.play();
+        video.muted = true;
+        await video.play();
         setTimeout(() => {
-          if (!videoRef.current) return; // Check again before accessing
-          videoRef.current.muted = false;
+          if (!video) return; // Double-check before modifying
+          video.muted = false;
           setIsMuted(false);
         }, 500);
       } catch (error) {
@@ -39,6 +41,7 @@ export function Hero() {
     playVideo();
   }
 }, [isMobile]);
+
 
 
   return (
