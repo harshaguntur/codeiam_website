@@ -1,7 +1,7 @@
 "use client"
 
 import { GoogleMapsEmbed } from "@next/third-parties/google"
-import { Calendar, MapPin, Navigation, PartyPopper, Stars } from "lucide-react"
+import { Calendar, MapPin, Navigation} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "./ui/badge"

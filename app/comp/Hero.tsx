@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { VolumeX, Volume2 } from "lucide-react"; // Icons for mute/unmute
+import Image from "next/image";
 
 export function Hero() {
   const videoSrc = "/STUDENT_IDEATHON_STARTUP-EXPO_2025.mp4"; // Ensure file is in the public folder
@@ -48,7 +49,7 @@ export function Hero() {
     <div className="relative w-full h-screen flex flex-col items-center justify-end bg-black text-white">
       {isClient && (isMobile ? (
         <>
-          <img
+          <Image
             src={imageSrc}
             alt="Event Preview"
             className="w-full h-auto object-contain sm:object-cover"
