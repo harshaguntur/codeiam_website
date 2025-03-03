@@ -6,12 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 const images = [
-  "/arvr.png",
   "/car2.jpg",
-  "/gallery3.jpg",
-  "/gallery4.jpg",
-  "/gallery5.jpg",
-  "/gallery6.jpg",
+  "/car2.jpg",
+  "/car2.jpg",
+  "/car2.jpg",
+  "/car2.jpg",
+  "/car2.jpg",
+  "/car2.jpg",
+  "/car2.jpg",
 ];
 
 export default function ImageGallery() {
