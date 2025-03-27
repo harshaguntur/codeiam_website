@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Toaster } from "./ui/sonner"
+import { toast } from "sonner"
 export default function EventLocationMap() {
 
 
@@ -17,8 +18,8 @@ export default function EventLocationMap() {
     date: "March 09, 2024",
     time: "10:00 AM - 6:00 PM",
     coordinates: "17.732385439529537, 83.32127485767163", // San Francisco coordinates
-    startDateTime: "2025-02-09T10:00:00",
-    endDateTime: "2025-02-09T18:00:00",
+    startDateTime: "2025-03-09T10:00:00",
+    endDateTime: "2025-03-09T18:00:00",
     description:
       "Join us for the Student Startup Expo 2025 & Where Ideas Becomes Innovation"
   }
@@ -40,6 +41,7 @@ export default function EventLocationMap() {
 
   const copyCalendarLink = () => {
     navigator.clipboard.writeText(createGoogleCalendarUrl())
+    toast("Copied to Clipboard✅.")
    
   }
 
