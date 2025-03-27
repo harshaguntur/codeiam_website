@@ -12,8 +12,7 @@ export function Hero() {
   const [isMuted, setIsMuted] = useState(true);
   const [isClient, setIsClient] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
- const videoRef = useRef<HTMLVideoElement | null>(null);
-
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -21,40 +20,39 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
-  if (!isMobile && videoRef.current) {
-    const playVideo = async () => {
-      const video = videoRef.current;
-      if (!video) return; // Ensure video is available
+    if (!isMobile && videoRef.current) {
+      const playVideo = async () => {
+        const video = videoRef.current;
+        if (!video) return; // Ensure video is available
 
-      try {
-        video.muted = true;
-        await video.play();
-        setTimeout(() => {
-          if (!video) return; // Double-check before modifying
-          video.muted = false;
-          setIsMuted(false);
-        }, 500);
-      } catch (error) {
-        console.warn("Autoplay failed, user interaction needed:", error);
-      }
-    };
-    
-    playVideo();
-  }
-}, [isMobile]);
+        try {
+          video.muted = true;
+          await video.play();
+          setTimeout(() => {
+            if (!video) return; // Double-check before modifying
+            video.muted = false;
+            setIsMuted(false);
+          }, 500);
+        } catch (error) {
+          console.warn("Autoplay failed, user interaction needed:", error);
+        }
+      };
 
-
+      playVideo();
+    }
+  }, [isMobile]);
 
   return (
-    <div className="relative w-full h-screen flex flex-col items-center justify-end bg-black text-white">
+    <div className="relative w-full h-screen flex items-center justify-center bg-black text-white">
       {isClient && (isMobile ? (
-        <>
-          <Image
-            src={imageSrc}
-            alt="Event Preview"
-            className="w-full h-auto object-contain sm:object-cover"
-          />
-        </>
+        <Image
+          src={imageSrc}
+          alt="Event Preview"
+          className="w-full h-auto object-contain sm:object-cover"
+          width={1920}
+          height={1080}
+          priority
+        />
       ) : (
         <video
           ref={videoRef}
@@ -81,21 +79,28 @@ export function Hero() {
         </button>
       )}
 
+      {/* Centered Text with Limited Height */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative z-10 flex flex-col items-center text-center bg-black/70 p-4 sm:p-6 md:p-12 rounded-lg shadow-lg w-[90%] sm:w-[80%] md:w-[60%] mb-8"
+        className="absolute flex flex-col items-center justify-center text-center bg-black/70 p-6 sm:p-8 md:p-12 rounded-lg shadow-lg 
+                   w-[90%] sm:w-[80%] md:w-[50%] max-h-[70vh] border border-white"
       >
-        <h1 className="text-lg sm:text-xl md:text-3xl font-bold">Pre-Incubation & Hackathon Cluster</h1>
+        <h1 className="text-lg sm:text-xl md:text-3xl font-bold">
+          Pre-Incubation & Hackathon Cluster
+        </h1>
         <p className="text-xs sm:text-sm md:text-lg text-neutral-300 mt-2">
           Join us for an innovation-driven event, fostering entrepreneurship and collaboration.
         </p>
         <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
-          <Link href="https://www.canva.com/design/DAGSM0Rlenk/VieoPgmahO2m3m5rNSuDZw/edit" className="w-full sm:w-auto">
-            <Button className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 border border-white text-white bg-transparent hover:bg-white/20 transition">
+          <Link
+            href="https://www.canva.com/design/DAGSM0Rlenk/VieoPgmahO2m3m5rNSuDZw/edit"
+            className="w-full sm:w-auto"
+          >
+            {/* <Button className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 border border-white text-white bg-transparent hover:bg-white/20 transition">
               Check Our Brochure →
-            </Button>
+            </Button> */}
           </Link>
           <Link href="/Events/student_startup_expo" className="w-full sm:w-auto">
             <Button className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 border border-white text-white bg-transparent hover:bg-white/20 transition">

@@ -5,14 +5,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
+import ImageGallery from "@/components/ui/ideathon_image_slider";
+import { JoinTeam } from "@/app/comp/Jointeam";
 
 const images = [
   { src: "/Student_EXPO.png", alt: "Student Startup Expo 1" },
-  { src: "/Student_EXPO_(7).png", alt: "Student Startup Expo 2" },
+  { src: "/WhatsApp Image 2025-03-01 at 20.42.23_f66e85d9.jpg", alt: "Student Startup Expo 2" },
 ];
 
 const StudentStartupExpo = () => {
   return (
+    <section>
+
+   
     <section className="px-6 py-12 mx-auto max-w-7xl mt-12 bg-white">
       {/* Image Slider */}
       <div className="mb-8 flex justify-center">
@@ -69,8 +74,8 @@ const StudentStartupExpo = () => {
       {/* Event Details */}
       <div className="mt-12 p-8 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow-lg text-center">
         <h3 className="text-2xl font-bold">📅 Event Details</h3>
-        <p className="mt-4 text-lg">📍 <strong>Venue:</strong> South Campus Placement Building, Andhra University</p>
-        <p className="text-lg">📆 <strong>Date:</strong> 01-03-2025</p>
+        <p className="mt-4 text-lg">📍 <strong>Venue:</strong> A-hub , AU</p>
+        <p className="text-lg">📆 <strong>Date:</strong> 09-03-2025</p>
         <p className="text-lg">🎟️ <strong>Registration:</strong> Open to all students with a startup idea. Sign-In with Google to access the form.</p>
         
         {/* Embedded Google Form */}
@@ -83,8 +88,27 @@ const StudentStartupExpo = () => {
         </iframe>
       </div>
 
+
+
+        {/* lunch registration form  */}
+ <div className="mt-12 p-8 bg-[#4E47E6] text-white rounded-lg shadow-lg text-center">
+        <h3 className="text-2xl font-bold">🍽️ Registration for Lunch</h3>
+        <p className="mt-4 text-lg">Reserve your lunch for the event by registering now.</p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfT2ufI3deB31SJwniA__2mAg-cTHl4QagU3fyLOTDjB4ZSfQ/viewform?usp=dialog"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-6 px-6 py-3 bg-white text-[#4E47E6] font-semibold rounded-lg shadow-md hover:bg-gray-100 transition"
+        >
+          Register for Lunch 🍽️
+        </a>
+      </div>
+
+
+
       {/* Verification Documents */}
       <div className="text-center bg-gray-100 py-8 rounded-lg shadow-md mt-12">
+
         <h3 className="text-2xl font-semibold text-gray-800 mb-6">Event Verification Documents</h3>
         <div className="flex flex-col sm:flex-row justify-center gap-6 flex-wrap">
           {[
@@ -104,7 +128,18 @@ const StudentStartupExpo = () => {
           ))}
         </div>
       </div>
+
+      {/* Image Gallery */}
+      <div className="mt-12">
+        <ImageGallery  />
+      </div>
+
+ 
+  
+
     </section>
+<JoinTeam/>
+</section> 
   );
 };
 

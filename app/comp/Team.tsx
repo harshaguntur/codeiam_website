@@ -8,11 +8,25 @@ interface TeamMember {
 }
 
 export default function CoreTeam() {
-  const teamMembers: TeamMember[] = Array(9).fill({
-    name: "Liam Bennett",
-    role: "Chapter Lead",
-    imageUrl: "/user.jpg"
-  })
+ const teamMembers: TeamMember[] = [
+  { name: "Erra Chathurya Sai", role: "Chapter Lead", imageUrl: "/team/IMG_20250208_065541 - Chathurya Sai Erra.jpg" },
+  { name: "GANTA KRISHNA CHAITANYA", role: "Chapter Lead", imageUrl: "/team/IMG_20250208_123412 - Chaitu.jpg" },
+  { name: "Sowmya Dadi", role: "co-lead", imageUrl: "/team/IMG_20250208_125220_202 - Sowmya D.jpg" },
+  { name: "Rasagna Gudipudi", role: "Chapter Lead", imageUrl: "/team/IMG-20241001-WA0027 - Rasagna G.jpg" },
+  { name: "K L S P Varshini", role: "Chapter Lead", imageUrl: "/team/Picsart_25-02-07_23-16-45-321 - KAREDLA LSPRIYAVARSHINI.png" },
+  { name: "D S S Chandra Vardhan", role: "Chapter Lead", imageUrl: "/team/IMG-20240211-WA0036 - Chandra Vardhan.jpg" },
+  { name: "Daniel RANDRIANATOANDRO NGUYEN VAN UY", role: "Chapter Lead", imageUrl: "/team/IMG_20250207_230109 - Daniel Nguyen Van Uy.jpg" },
+  { name: "Narisetty Sravanthi", role: "Chapter Lead", imageUrl: "/team/IMG_20240527_140452 - Sravanthi chowdary.jpg" },
+  { name: "Subbisetti Teja", role: "Chapter Lead", imageUrl: "/team/codeiam1 - Subbisetti teja.jpg" },
+  { name: "SL Harshini Marineedi", role: "co-lead", imageUrl: "/team/IMG_20250208_200259 - Harshini Marineedi.jpg" },
+  { name: "P. Navya Sree", role: "co-lead", imageUrl: "/team/_DSC0394 copy - navya sree.jpg" },
+  { name: "Manoj Sai Prasad", role: "co-lead", imageUrl: "/team/D4B10F61-7BF9-4A51-A164-D4838F1696BD - Chandana Vuppada.jpg" },
+  { name: "SREEPRIYA PILLA", role: "Chapter Lead", imageUrl: "/team/Photo - PILLA SREEPRIYA.jpg" },
+  { name: "Aravapalli Karunya", role: "Chapter Lead", imageUrl: "/team/IMG-20230716-WA0005 - Karunya Aravapalli.jpg" },
+  { name: "Shaik Asif Umeed", role: "co-lead", imageUrl: "/team/Asif - Asif Umeed Shaik.jpeg" }
+];
+
+
 
   return (
     <section className="px-4 py-12 mx-auto max-w-6xl mt-24">
