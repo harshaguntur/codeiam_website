@@ -143,11 +143,7 @@ export default function Home() {
     height: "100vh",
   }}
 >
-  <iframe
-    src="https://ubiquitous-elderberry-49b.notion.site/ebd/1c3c5c15897080429a6ad7c9f52fa4f4"
-    className="absolute top-0 left-0 w-full h-full border-none"
-    allowFullScreen
-  />
+<iframe src="https://ubiquitous-elderberry-49b.notion.site/ebd/1c3c5c15897080429a6ad7c9f52fa4f4" width="100%" height="600" frameBorder="0" allowFullScreen />
 </div>
 
           </div>
